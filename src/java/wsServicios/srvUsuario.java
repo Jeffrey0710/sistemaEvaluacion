@@ -20,14 +20,14 @@ import javax.jws.WebParam;
 public class srvUsuario {
 
     @WebMethod(operationName = "insertar")
-    public int insertarUsuario(@WebParam(name = "nombre") String nombre, @WebParam(name = "password") String password, @WebParam(name = "lugarFavorito") String lugarFavorito, @WebParam(name = "emailAlternativo") String emailAlternativo, @WebParam(name = "pasatiempo") String pasatiempo, @WebParam(name = "idEmpresa") int idEmpresa) {
+    public int insertarUsuario(@WebParam(name = "usuario") String nombre, @WebParam(name = "password") String password, @WebParam(name = "lugarFavorito") String lugarFavorito, @WebParam(name = "emailAlternativo") String emailAlternativo, @WebParam(name = "pasatiempo") String pasatiempo, @WebParam(name = "idEmpresa") int idEmpresa) {
         csUsuario p = new csUsuario();
         return p.insertar(nombre, password, lugarFavorito, emailAlternativo, pasatiempo, idEmpresa);
     }
 //----------------------------------------------------------------------------------------------------------------------------------
 
     @WebMethod(operationName = "actualizacion")
-    public int actualizarUsuario(@WebParam(name = "nombre") String nombre, @WebParam(name = "password") String password, @WebParam(name = "lugarFavorito") String lugarFavorito, @WebParam(name = "emailAlternativo") String emailAlternativo, @WebParam(name = "pasatiempo") String pasatiempo, @WebParam(name = "idEmpresa") int idEmpresa, @WebParam(name = "idUsuario") int idUsuario) {
+    public int actualizarUsuario(@WebParam(name = "usuario") String nombre, @WebParam(name = "password") String password, @WebParam(name = "lugarFavorito") String lugarFavorito, @WebParam(name = "emailAlternativo") String emailAlternativo, @WebParam(name = "pasatiempo") String pasatiempo, @WebParam(name = "idEmpresa") int idEmpresa, @WebParam(name = "idUsuario") int idUsuario) {
         csUsuario p = new csUsuario();
         return p.actualizar(nombre, password, lugarFavorito, emailAlternativo, pasatiempo, idEmpresa, idUsuario);
     }

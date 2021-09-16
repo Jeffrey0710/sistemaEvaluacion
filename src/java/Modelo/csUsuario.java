@@ -32,7 +32,7 @@ public class csUsuario {
 
         try {
             stm = con.createStatement();
-            respuesta = stm.executeUpdate("insert into dbo.usuario(nombre,password,lugarFavorito,emailAlternativo,pasatiempo,idEmpresa) values ('" + nombre + "', '" + password + "', '" + lugarFavorito + "', '" + emailAlternativo + "', '" + pasatiempo + "'," + idEmpresa + ")");
+            respuesta = stm.executeUpdate("insert into dbo.usuario(usuario,password,lugarFavorito,emailAlternativo,pasatiempo,idEmpresa) values ('" + nombre + "', '" + password + "', '" + lugarFavorito + "', '" + emailAlternativo + "', '" + pasatiempo + "'," + idEmpresa + ")");
 
             c1.desconectar();
             con.close();
@@ -52,7 +52,7 @@ public class csUsuario {
 
         try {
             stm = con.createStatement();
-            respuesta = stm.executeUpdate("update dbo.usuario set nombre= '" + nombre + "', password= '" + password + "', lugarFavorito= '" + lugarFavorito + "', emailAlternativo= '" + emailAlternativo + "', pasatiempo= '" + pasatiempo + "', idEmpresa= " + idEmpresa + " where idUsuario= " + idUsuario + " ");
+            respuesta = stm.executeUpdate("update dbo.usuario set usuario= '" + nombre + "', password= '" + password + "', lugarFavorito= '" + lugarFavorito + "', emailAlternativo= '" + emailAlternativo + "', pasatiempo= '" + pasatiempo + "', idEmpresa= " + idEmpresa + " where idUsuario= " + idUsuario + " ");
             c1.desconectar();
             con.close();
             stm.close();
@@ -94,7 +94,7 @@ public class csUsuario {
             rs = stm.executeQuery("select *  from dbo.usuario");
 
             while (rs.next()) {
-                p = new usuario(rs.getString("nombre"), rs.getString("password"),
+                p = new usuario(rs.getString("usuario"), rs.getString("password"),
                         rs.getString("lugarFavorito"), rs.getString("emailAlternativo"),
                         rs.getString("pasatiempo"), rs.getInt("idEmpresa"),
                         rs.getInt(1));
@@ -123,7 +123,7 @@ public class csUsuario {
             rs = stm.executeQuery("select * from dbo.usuario where idUsuario=" + idUsuario + "");
 
             while (rs.next()) {
-                p = new usuario(rs.getString("nombre"), rs.getString("password"),
+                p = new usuario(rs.getString("usuario"), rs.getString("password"),
                         rs.getString("lugarFavorito"), rs.getString("emailAlternativo"),
                         rs.getString("pasatiempo"), rs.getInt("idEmpresa"),
                         rs.getInt(1));

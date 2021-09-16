@@ -34,6 +34,9 @@
     <service name="srvRegistroEvaluacion">
       <implementation-class>wsServicios.srvRegistroEvaluacion</implementation-class>
     </service>
+    <service name="srvUser">
+      <implementation-class>wsServicios.srvUser</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
